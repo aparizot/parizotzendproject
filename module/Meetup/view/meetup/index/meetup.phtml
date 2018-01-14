@@ -1,0 +1,19 @@
+<div class="container">
+
+        <div class="row">
+                <h1> <?= $meetupSelected->getTitle() ?> </h1>
+        </div>
+
+        <div class="row">
+                <h3> Description </h3>
+                <br>
+                <p> <?= $meetupSelected->getDescription() ?> </p>
+        </div>
+
+        <div class="row">
+                <h3> Meetup Date & hour : </h3> <br>
+                <p><b> Beginning at: </b> <?= $meetupSelected->getStartAt() ?> </p> <br>
+                <p><b> Ending at : </b> <?= $meetupSelected->getEndAt() ?> </p>
+        </div>
+
+</div>

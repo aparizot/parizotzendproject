@@ -1,0 +1,65 @@
+<style>
+
+.description input
+{
+    width:300px;
+}
+
+</style>
+
+<h2>Add Meetup</h2>
+
+<?php
+
+    $form = $this->form;
+
+?>
+
+<?= $this->form()->openTag($form); ?>
+
+<div class="row">
+
+        <div class='col-sm-4'>
+                <?= $this->formRow($form->get('title')) ?>
+        </div>
+
+</div>
+
+<br>
+
+<div class="row">
+        <div class='col-sm-4 description'>
+                <?= $this->formRow($form->get('description')) ?>
+        </div>
+</div>
+
+<br>
+
+<div class="row">
+        <div class='col-sm-4'>
+            <?= $this->formRow($form->get('startAt')) ?>
+        </div>
+</div>
+
+<br>
+
+    <div class="row">
+            <div class='col-sm-4'>
+                <?= $this->formRow($form->get('endAt')) ?>
+            </div>
+</div>
+
+<br>
+
+<?= $this->formInput($form->get('submit')) ?><br>
+
+<?= $this->form()->closeTag($form); ?>
+    
+    <script type="text/javascript">
+
+        $(function () {
+            $('#datetime1').datetimepicker();
+            $('#datetime2').datetimepicker();
+        });
+
+    </script>

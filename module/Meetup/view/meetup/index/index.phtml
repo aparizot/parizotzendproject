@@ -1,0 +1,64 @@
+<h1>Meetup list</h1>
+
+<div class="container">
+
+    <table class="table table-striped table-bordered table-hover">
+
+    <tr>
+
+        <th class="text-center"> Meetup </th>
+
+        <th class="text-center"> Description </th>
+
+        <th class="text-center"> Start at </th>
+
+        <th class="text-center"> End at </th>
+
+        <th class="text-center"> See </th>
+
+        <th class="text-center"> Update </th>
+
+        <th class="text-center"> Delete </th>
+
+    </tr>
+
+        <?php 
+
+            foreach ($this->meetupAll as $meetupOne):
+
+        ?>
+
+    <tr>
+
+        <td class="text-center"><?= $meetupOne->getTitle() ?></td>
+
+        <td class="text-center"><?= $meetupOne->getDescription() ?></td>
+
+        <td class="text-center"><?= $meetupOne->getStartAt() ?></td>
+
+        <td class="text-center"><?= $meetupOne->getEndAt() ?></td>
+
+        <td class="text-center">
+            <a href="meetup/meetup/<?= $meetupOne->getID(); ?>"> See </a>
+        </td>
+
+        <td class="text-center">
+            <a href="meetup/update/<?= $meetupOne->getID(); ?>" style="color:green;" > Update </a>
+        </td>
+
+        <td class="text-center">
+            <a href="meetup/delete/<?= $meetupOne->getID(); ?>" style="color:red;" > Delete </a>
+        </td>
+        
+    </tr>
+
+        <?php 
+
+            endforeach; 
+
+        ?>
+    </table>
+
+</div>
+
+<a href="<?= $this->url('meetup/add'); ?>"">Add a Meetup </a>
